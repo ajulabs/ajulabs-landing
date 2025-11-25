@@ -53,10 +53,10 @@ export function Header() {
               <button
                 onClick={() => handleLocaleChange("pt")}
                 className={cn(
-                  "transition-colors",
+                  "transition-colors cursor-pointer",
                   locale === "pt"
                     ? "font-regular text-white"
-                    : "text-gray-400 hover:text-white"
+                    : "text-gray-400 hover:text-[#F2760F]"
                 )}
               >
                 PT
@@ -65,10 +65,10 @@ export function Header() {
               <button
                 onClick={() => handleLocaleChange("en")}
                 className={cn(
-                  "transition-colors",
+                  "transition-colors cursor-pointer",
                   locale === "en"
                     ? "font-regular text-white"
-                    : "text-gray-400 hover:text-white"
+                    : "text-gray-400 hover:text-[#F2760F]"
                 )}
               >
                 EN
@@ -77,7 +77,7 @@ export function Header() {
 
             <Button
               variant="default"
-              className="bg-[#F2760F] hover:bg-[#ffffff] hover:text-[#000000] text-white rounded-[12px] px-6 py-2 text-sm font-light"
+              className="bg-[#F2760F] hover:bg-[#ffffff] hover:text-[#000000] text-white rounded-[12px] px-6 py-2 text-sm font-light cursor-pointer"
             >
               {ctaText}
             </Button>
@@ -88,10 +88,10 @@ export function Header() {
               <button
                 onClick={() => handleLocaleChange("pt")}
                 className={cn(
-                  "transition-colors",
+                  "transition-colors cursor-pointer",
                   locale === "pt"
                     ? "font-regular text-white"
-                    : "text-gray-400 hover:text-white"
+                    : "text-gray-400 hover:text-[#F2760F]"
                 )}
               >
                 PT
@@ -100,10 +100,10 @@ export function Header() {
               <button
                 onClick={() => handleLocaleChange("en")}
                 className={cn(
-                  "transition-colors",
+                  "transition-colors cursor-pointer",
                   locale === "en"
                     ? "font-regular text-white"
-                    : "text-gray-400 hover:text-white"
+                    : "text-gray-400 hover:text-[#F2760F]"
                 )}
               >
                 EN
@@ -127,51 +127,64 @@ export function Header() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden border-t border-gray-800"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ 
+                duration: 0.4,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              className="md:hidden border-t border-gray-800 overflow-hidden"
             >
-              <nav className="flex flex-col py-4">
-                {navigationItems.map((item, index) => (
-                  <motion.a
-                    key={item.key}
-                    href={item.href}
-                    onClick={closeMobileMenu}
+              <motion.div
+                initial={{ y: -20 }}
+                animate={{ y: 0 }}
+                exit={{ y: -20 }}
+                transition={{ 
+                  duration: 0.4,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
+              >
+                <nav className="flex flex-col py-4">
+                  {navigationItems.map((item, index) => (
+                    <motion.a
+                      key={item.key}
+                      href={item.href}
+                      onClick={closeMobileMenu}
+                      initial={{ opacity: 0, y: -30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -30 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: index * 0.08,
+                        ease: "easeOut",
+                      }}
+                      className="text-[#E6E6E6] text-sm font-normal py-3 px-4 hover:text-[#F2760F] hover:bg-gray-900 transition-colors"
+                    >
+                      {item.label}
+                    </motion.a>
+                  ))}
+                  <motion.div
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -30 }}
                     transition={{
                       duration: 0.4,
-                      delay: index * 0.1,
+                      delay: navigationItems.length * 0.08,
                       ease: "easeOut",
                     }}
-                    className="text-[#E6E6E6] text-sm font-normal py-3 px-4 hover:text-[#F2760F] hover:bg-gray-900 transition-colors"
+                    className="px-4 pt-2"
                   >
-                    {item.label}
-                  </motion.a>
-                ))}
-                <motion.div
-                  initial={{ opacity: 0, y: -30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -30 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: navigationItems.length * 0.1,
-                    ease: "easeOut",
-                  }}
-                  className="px-4 pt-2"
-                >
-                  <Button
-                    variant="default"
-                    onClick={closeMobileMenu}
-                    className="w-full bg-[#F2760F] hover:bg-[#ffffff] hover:text-[#000000] rounded-[12px] px-4 py-2 text-sm font-light"
-                  >
-                    {ctaText}
-                  </Button>
-                </motion.div>
-              </nav>
+                    <Button
+                      variant="default"
+                      onClick={closeMobileMenu}
+                      className="w-full bg-[#F2760F] hover:bg-[#ffffff] hover:text-[#000000] rounded-[12px] px-4 py-2 text-sm font-light cursor-pointer"
+                    >
+                      {ctaText}
+                    </Button>
+                  </motion.div>
+                </nav>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

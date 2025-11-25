@@ -31,8 +31,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <I18nProvider>
+          <Header />
           <LoadingScreen>
-            <Header />
             <main className="pt-16 md:pt-20">{children}</main>
           </LoadingScreen>
         </I18nProvider>

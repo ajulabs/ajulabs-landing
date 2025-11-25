@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import logo from "../../../../public/logo.png";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
   const {
@@ -123,31 +124,57 @@ export function Header() {
           </div>
         </div>
 
-        {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-800">
-            <nav className="flex flex-col py-4">
-              {navigationItems.map((item) => (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  onClick={closeMobileMenu}
-                  className="text-[#E6E6E6] text-sm font-normal py-3 px-4 hover:text-[#F2760F] hover:bg-gray-900 transition-colors"
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden border-t border-gray-800"
+            >
+              <nav className="flex flex-col py-4">
+                {navigationItems.map((item, index) => (
+                  <motion.a
+                    key={item.key}
+                    href={item.href}
+                    onClick={closeMobileMenu}
+                    initial={{ opacity: 0, y: -30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -30 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.1,
+                      ease: "easeOut",
+                    }}
+                    className="text-[#E6E6E6] text-sm font-normal py-3 px-4 hover:text-[#F2760F] hover:bg-gray-900 transition-colors"
+                  >
+                    {item.label}
+                  </motion.a>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0, y: -30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: navigationItems.length * 0.1,
+                    ease: "easeOut",
+                  }}
+                  className="px-4 pt-2"
                 >
-                  {item.label}
-                </a>
-              ))}
-              <div className="px-4 pt-2">
-                <Button
-                  variant="default"
-                  onClick={closeMobileMenu}
-                  className="w-full bg-[#F2760F] hover:bg-[#ffffff] hover:text-[#000000] rounded-[12px] px-4 py-2 text-sm font-light"
-                >
-                  {ctaText}
-                </Button>
-              </div>
-            </nav>
-          </div>
-        )}
+                  <Button
+                    variant="default"
+                    onClick={closeMobileMenu}
+                    className="w-full bg-[#F2760F] hover:bg-[#ffffff] hover:text-[#000000] rounded-[12px] px-4 py-2 text-sm font-light"
+                  >
+                    {ctaText}
+                  </Button>
+                </motion.div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );

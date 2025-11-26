@@ -10,5 +10,12 @@ export interface Translations {
     };
     cta: string;
   };
+  homepage: {
+    hero: {
+      title: string;
+      subtitle: string;
+      cta: string;
+    };
+  };
 }
 

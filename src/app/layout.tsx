@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 import { I18nProvider } from "@/lib/i18n/context";
 import { Header } from "@/features/header/components/Header";
+import { LoadingScreen } from "@/components/LoadingScreen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,9 @@ export default function RootLayout({
       >
         <I18nProvider>
           <Header />
-          <main className="pt-16 md:pt-20">{children}</main>
+          <LoadingScreen>
+            <main className="pt-16 md:pt-20">{children}</main>
+          </LoadingScreen>
         </I18nProvider>
       </body>
     </html>

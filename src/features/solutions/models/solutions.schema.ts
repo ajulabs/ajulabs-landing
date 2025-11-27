@@ -4,7 +4,10 @@ export const serviceSchema = z.object({
   id: z.string(),
   number: z.string(),
   title: z.string(),
-  description: z.string(),
+  description: z.object({
+    line1: z.string(),
+    line2: z.string(),
+  }),
   features: z.array(z.string()),
   image: z.string().optional(),
 });

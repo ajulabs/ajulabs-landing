@@ -18,13 +18,16 @@ export const translations: Record<'pt' | 'en', Translations> = {
         line2: 'TRANSFORMAR NEGÓCIOS E PESSOAS.',
       },
       subtitle: {
-        line3: 'Acreditamos que cada projeto é uma ',
-        line4: 'oportunidade de expandir possibilidades.',
+        line1: 'Acreditamos que cada projeto é uma ',
+        line2: 'oportunidade de expandir possibilidades.',
       },
       items: {
         websites: {
           title: 'Desenvolvimento de Websites',
-          description: 'Criamos websites modernos, responsivos e otimizados que transformam visitantes em clientes.',
+          description: {
+            line1: 'Criamos websites modernos, responsivos e ',
+            line2: 'otimizados que transformam visitantes em clientes.',
+          },
           features: [
             'Design responsivo e mobile-first',
             'Performance otimizada (SEO e velocidade)',
@@ -34,7 +37,10 @@ export const translations: Record<'pt' | 'en', Translations> = {
         },
         apps: {
           title: 'Desenvolvimento de Aplicativos',
-          description: 'Aplicativos nativos e multiplataforma que oferecem experiências excepcionais aos usuários.',
+          description: {
+            line1: 'Aplicativos nativos e multiplataforma que oferecem ',
+            line2: 'experiências excepcionais aos usuários.',
+          },
           features: [
             'Apps iOS e Android nativos',
             'Aplicativos multiplataforma (React Native)',
@@ -44,7 +50,10 @@ export const translations: Record<'pt' | 'en', Translations> = {
         },
         integrations: {
           title: 'Integrações & API',
-          description: 'Conectamos seus sistemas e automatizamos processos através de APIs robustas e seguras.',
+          description: {
+            line1: 'Conectamos seus sistemas e automatizamos ',
+            line2: 'processos através de APIs robustas e seguras.',
+          },
           features: [
             'Desenvolvimento de APIs RESTful',
             'Integração com sistemas terceiros',
@@ -54,7 +63,10 @@ export const translations: Record<'pt' | 'en', Translations> = {
         },
         ai: {
           title: 'Soluções com IA Integrada',
-          description: 'Implementamos inteligência artificial para otimizar processos e criar experiências personalizadas.',
+          description: {
+            line1: 'Implementamos inteligência artificial para otimizar ',
+            line2: 'processos e criar experiências personalizadas.',
+          },
           features: [
             'Chatbots inteligentes',
             'Análise preditiva de dados',
@@ -82,13 +94,16 @@ export const translations: Record<'pt' | 'en', Translations> = {
         line2: 'TRANSFORM BUSINESSES AND PEOPLE.',
       },
       subtitle: {
-        line3: 'We believe that every project is an ',
-        line4: 'opportunity to expand possibilities.',
+        line1: 'We believe that every project is an ',
+        line2: 'opportunity to expand possibilities.',
       },
       items: {
         websites: {
           title: 'Website Development',
-          description: 'We create modern, responsive, and optimized websites that turn visitors into customers.',
+          description: {
+            line1: 'We create modern, responsive, and optimized ',
+            line2: 'websites that turn visitors into customers.',
+          },
           features: [
             'Responsive and mobile-first design',
             'Optimized performance (SEO and speed)',
@@ -98,7 +113,11 @@ export const translations: Record<'pt' | 'en', Translations> = {
         },
         apps: {
           title: 'Application Development',
-          description: 'Native and cross-platform applications that deliver exceptional user experiences.',
+          description: 
+          {
+            line1: 'Native and cross-platform applications ',
+            line2: 'that deliver exceptional user experiences.',
+          },
           features: [
             'Native iOS and Android apps',
             'Cross-platform applications (React Native)',
@@ -108,7 +127,10 @@ export const translations: Record<'pt' | 'en', Translations> = {
         },
         integrations: {
           title: 'Integrations & API',
-          description: 'We connect your systems and automate processes through robust and secure APIs.',
+          description: {
+            line1: 'We connect your systems and automate ',
+            line2: 'processes through robust and secure APIs.',
+          },
           features: [
             'RESTful API development',
             'Third-party system integration',
@@ -118,7 +140,10 @@ export const translations: Record<'pt' | 'en', Translations> = {
         },
         ai: {
           title: 'Integrated AI Solutions',
-          description: 'We implement artificial intelligence to optimize processes and create personalized experiences.',
+          description: {
+            line1: 'We implement artificial intelligence to optimize ',
+            line2: 'processes and create personalized experiences.',
+          },
           features: [
             'Intelligent chatbots',
             'Predictive data analysis',

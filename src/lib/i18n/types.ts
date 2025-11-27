@@ -17,28 +17,40 @@ export interface Translations {
       line2: string;
     };
     subtitle: {
-      line3: string;
-      line4: string;
+      line1: string;
+      line2: string;
     };
     items: {
       websites: {
         title: string;
-        description: string;
+        description: {
+          line1: string;
+          line2: string;
+        };
         features: string[];
       };
       apps: {
         title: string;
-        description: string;
+        description: {
+          line1: string;
+          line2: string;
+        };
         features: string[];
       };
       integrations: {
         title: string;
-        description: string;
+        description: {
+          line1: string;
+          line2: string;
+        };
         features: string[];
       };
       ai: {
         title: string;
-        description: string;
+        description: {
+          line1: string;
+          line2: string;
+        };
         features: string[];
       };
     };

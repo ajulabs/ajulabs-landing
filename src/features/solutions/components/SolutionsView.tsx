@@ -1,7 +1,8 @@
 'use client';
 
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
 import { useServicesViewModel } from '../viewModels/useSolutionsViewModel';
 import arrowUpRightIcon from '../../../../public/arrow-up-right.svg';
 import Image from 'next/image';
@@ -16,38 +17,88 @@ export function ServicesView() {
   } = useServicesViewModel();
 
   const headlineRef = useRef<HTMLHeadingElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const springConfigHeadline = { damping: 25, stiffness: 700 };
-  const x = useSpring(mouseX, springConfigHeadline);
-  const y = useSpring(mouseY, springConfigHeadline);
+  const letterRefs = useRef<(HTMLSpanElement | null)[]>([]);
+
+  useEffect(() => {
+    const totalChars = translations.headline.line1.length + translations.headline.line2.length;
+    letterRefs.current = new Array(totalChars).fill(null);
+    
+    const timer = setTimeout(() => {
+      if (headlineRef.current) {
+        const spans = headlineRef.current.querySelectorAll('span');
+        spans.forEach((span, idx) => {
+          if (idx < letterRefs.current.length) {
+            letterRefs.current[idx] = span as HTMLSpanElement;
+          }
+        });
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [translations.headline]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLHeadingElement>) => {
     if (!headlineRef.current) return;
+
+    const hasLetters = letterRefs.current.some((ref) => ref !== null);
+    if (!hasLetters) {
+      const spans = headlineRef.current.querySelectorAll('span');
+      spans.forEach((span, idx) => {
+        if (idx < letterRefs.current.length) {
+          letterRefs.current[idx] = span as HTMLSpanElement;
+        }
+      });
+    }
+
     const rect = headlineRef.current.getBoundingClientRect();
-    mouseX.set(e.clientX - rect.left);
-    mouseY.set(e.clientY - rect.top);
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const threshold = 80;
+
+    letterRefs.current.forEach((letterRef, index) => {
+      if (!letterRef) return;
+
+      const letterRect = letterRef.getBoundingClientRect();
+      const letterX = letterRect.left + letterRect.width / 2 - rect.left;
+      const letterY = letterRect.top + letterRect.height / 2 - rect.top;
+
+      const distance = Math.sqrt(
+        Math.pow(mouseX - letterX, 2) + Math.pow(mouseY - letterY, 2)
+      );
+
+      if (distance < threshold) {
+        const intensity = 1 - distance / threshold;
+        gsap.to(letterRef, {
+          color: `rgb(${Math.round(31 + (249 - 31) * intensity)}, ${Math.round(41 + (115 - 41) * intensity)}, ${Math.round(55 + (22 - 55) * intensity)})`,
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      } else {
+        gsap.to(letterRef, {
+          color: '#1f2937',
+          duration: 0.5,
+          ease: 'power2.out',
+        });
+      }
+    });
   };
 
-  const handleMouseLeaveHeadline = () => {
-    if (!headlineRef.current) return;
-    const rect = headlineRef.current.getBoundingClientRect();
-    mouseX.set(rect.width / 2);
-    mouseY.set(rect.height / 2);
+  const handleMouseLeave = () => {
+    letterRefs.current.forEach((letterRef) => {
+      if (!letterRef) return;
+      gsap.to(letterRef, {
+        color: '#1f2937',
+        duration: 0.6,
+        ease: 'power2.out',
+      });
+    });
   };
 
   return (
     <section id="solutions" className="relative w-full bg-white py-24 px-6 md:px-12 lg:px-24 services-font">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="grid grid-cols-1 lg:grid-cols-2 items-start mb-20 lg:mb-24"
-        >
-          {/* Section Title */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-start mb-20 lg:mb-24">
           <div className="flex items-center gap-3 pt-2 mb-6 lg:mb-0">
             <div className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
             <h2 className="text-gray-800 text-sm font-medium tracking-wider uppercase">
@@ -55,46 +106,48 @@ export function ServicesView() {
             </h2>
           </div>
 
-          {/* Headline */}
-          <div className="text-right">
-            <motion.h3
+          <div className="text-right" style={{ position: 'relative', zIndex: 1 }}>
+            <h3
               ref={headlineRef}
               onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeaveHeadline}
+              onMouseLeave={handleMouseLeave}
               className="text-2xl md:text-2xl xl:text-3xl font-medium leading-tight mb-2 md:mb-4 relative cursor-default inline-block"
+              style={{ pointerEvents: 'auto', zIndex: 2 }}
             >
-              <span className="relative z-10 text-gray-800 select-none pointer-events-none">
-                {translations.headline.line1}
-                <br />
-                {translations.headline.line2}
-              </span>
-              <motion.span
-                className="absolute inset-0 select-none pointer-events-none ease-in-out duration-300"
-                style={{
-                  background: useTransform(
-                    [x, y],
-                    ([xVal, yVal]) => {
-                      const gradientSize = 50;
-                      return `radial-gradient(circle ${gradientSize}px at ${xVal}px ${yVal}px, rgba(249, 115, 22, 0.9) 0%, rgba(249, 115, 22, 0.5) 35%, transparent 65%)`;
-                    }
-                  ),
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                {translations.headline.line1}
-                <br />
-                {translations.headline.line2}
-              </motion.span>
-            </motion.h3>
-            <p className="text-gray-500 text-base md:text-lg leading-relaxed">
-              {translations.subtitle.line3}
+              {translations.headline.line1.split('').map((char, index) => (
+                <span
+                  key={`line1-${index}`}
+                  ref={(el) => {
+                    letterRefs.current[index] = el;
+                  }}
+                  className="inline-block"
+                  style={{ color: '#1f2937', pointerEvents: 'none' }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </span>
+              ))}
               <br />
-              {translations.subtitle.line4}
+              {/* Second line */}
+              {translations.headline.line2.split('').map((char, index) => (
+                <span
+                  key={`line2-${index}`}
+                  ref={(el) => {
+                    letterRefs.current[translations.headline.line1.length + index] = el;
+                  }}
+                  className="inline-block"
+                  style={{ color: '#1f2937', pointerEvents: 'none' }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </span>
+              ))}
+            </h3>
+            <p className="text-gray-500 text-base md:text-lg leading-relaxed">
+              {translations.subtitle.line1}
+              <br />
+              {translations.subtitle.line2}
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* Services List */}
         <motion.div
@@ -120,7 +173,7 @@ export function ServicesView() {
                 layout
                 onMouseEnter={() => handleServiceHover(service.id)}
                 onMouseLeave={handleServiceLeave}
-                className="relative hover:border-t hover:border-gray-200 ease-in-out duration-300"
+                className="relative hover:border-t hover:border-b hover:border-gray-200 ease-in-out duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -163,8 +216,10 @@ export function ServicesView() {
                             transition={{ ...springConfig, duration: 0.3 }}
                             className="w-full"
                         >
-                            <p className="text-gray-600 text-sm lg:text-base leading-relaxed mt-2 lg:mt-0 lg:pl-0">
-                                {service.description}
+                            <p className="text-gray-600 text-sm lg:text-base leading-relaxed mt-2 lg:mt-0 lg:pl-0"> 
+                              {service.description.line1}
+                              <br />
+                              {service.description.line2}
                             </p>
                         </motion.div>
                       )}

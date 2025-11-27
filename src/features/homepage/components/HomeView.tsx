@@ -1,17 +1,12 @@
 'use client';
 
-import { Title } from './Title';
-import { useHomeViewModel } from '../viewModels/useHomeViewModel';
+import { ServicesView } from '@/features/solutions/components/SolutionsView';
 
 export function HomeView() {
-  const { title } = useHomeViewModel();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <Title title={title} />
-      <p className="mt-4 text-lg text-gray-500">
-        Homepage Feature Setup Complete.
-      </p>
+    <main className="flex min-h-screen flex-col">      
+      <ServicesView />
     </main>
   );
 }

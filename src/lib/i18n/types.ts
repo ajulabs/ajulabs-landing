@@ -10,5 +10,38 @@ export interface Translations {
     };
     cta: string;
   };
+  services: {
+    sectionTitle: string;
+    headline: {
+      line1: string;
+      line2: string;
+    };
+    subtitle: {
+      line3: string;
+      line4: string;
+    };
+    items: {
+      websites: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+      apps: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+      integrations: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+      ai: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+    };
+  };
 }
 

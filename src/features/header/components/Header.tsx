@@ -112,7 +112,7 @@ export function Header() {
 
             <button
               onClick={toggleMobileMenu}
-              className="text-white p-2 hover:text-[#F2760F] transition-colors"
+              className="text-white p-2 hover:text-[#F2760F] transition-colors cursor-pointer"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (

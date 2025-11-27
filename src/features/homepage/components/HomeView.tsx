@@ -12,6 +12,13 @@ export function HomeView() {
         <h2 className="text-black text-3xl font-bold">coming soon...</h2>
       </section>
       
+import { ServicesView } from '@/features/solutions/components/SolutionsView';
+
+export function HomeView() {
+
+  return (
+    <main className="flex min-h-screen flex-col">      
+      <ServicesView />
     </main>
   );
 }

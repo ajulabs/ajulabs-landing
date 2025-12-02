@@ -1,24 +1,17 @@
 'use client';
 
-import { useMotionTemplate, useMotionValue, motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 export const HeroBackground = () => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
       if (!containerRef.current) return;
-      
-      const rect = containerRef.current.getBoundingClientRect();
-      
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      mouseX.set(x);
-      mouseY.set(y);
+      const { left, top } = containerRef.current.getBoundingClientRect();
+
+      containerRef.current.style.setProperty('--x', `${e.clientX - left}px`);
+      containerRef.current.style.setProperty('--y', `${e.clientY - top}px`);
     };
 
     window.addEventListener('mousemove', updateMousePosition);
@@ -26,40 +19,25 @@ export const HeroBackground = () => {
     return () => {
       window.removeEventListener('mousemove', updateMousePosition);
     };
-  }, [mouseX, mouseY]);
+  }, []);
 
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 z-0 overflow-hidden bg-black"
+      className="absolute inset-0 z-0 overflow-hidden bg-[#050505]"
+      style={{
+        '--x': '-500px',
+        '--y': '-500px',
+      } as React.CSSProperties}
     >
-      <motion.div
-        className="absolute inset-0 z-10 bg-gradient-to-b from-green-500/40 to-orange-500/40"
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center"
         style={{
-          maskImage: useMotionTemplate`
-            radial-gradient(
-              350px circle at ${mouseX}px ${mouseY}px,
-              black,
-              transparent
-            )
-          `,
-          WebkitMaskImage: useMotionTemplate`
-            radial-gradient(
-              350px circle at ${mouseX}px ${mouseY}px,
-              black,
-              transparent
-            )
-          `,
+          backgroundImage: `url('/hero-background.png')`,
+          maskImage: `radial-gradient(circle 150px at var(--x) var(--y), black 0%, transparent 100%)`,
+          WebkitMaskImage: `radial-gradient(circle 150px at var(--x) var(--y), black 0%, transparent 100%)`,
         }}
-      >
-        <div 
-          className="absolute inset-0 opacity-60"
-          style={{
-            backgroundImage: 'radial-gradient(#ffffff 1.5px, transparent 1.5px)',
-            backgroundSize: '30px 30px',
-          }}
-        />
-      </motion.div>
+      />
     </div>
   );
 };

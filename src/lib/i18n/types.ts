@@ -15,6 +15,8 @@ export interface Translations {
       title: string;
       subtitle: string;
       cta: string;
+    };
+  },
   services: {
     sectionTitle: string;
     headline: {

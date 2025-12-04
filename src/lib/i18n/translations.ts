@@ -76,6 +76,18 @@ export const translations: Record<'pt' | 'en', Translations> = {
         },
       },
     },
+    cases: {
+      sectionTitle: 'CASES AJULABS',
+      headline: {
+        line1: 'PROJETOS QUE NASCERAM DA',
+        line2: 'CONFIANÇA E VIRARAM REFERÊNCIA.',
+      },
+      subtitle: {
+        line1: 'Trabalhamos lado a lado com nossos parceiros: pesquisando, ',
+        line2: 'prototipando e construindo soluções que entregam impacto real.',
+      },
+      viewProject: 'VISUALIZAR PROJETO',
+    },
   },
   en: {
     header: {
@@ -152,6 +164,18 @@ export const translations: Record<'pt' | 'en', Translations> = {
           ],
         },
       },
+    },
+    cases: {
+      sectionTitle: 'AJULABS CASES',
+      headline: {
+        line1: 'PROJECTS BORN FROM',
+        line2: 'TRUST AND BECAME A REFERENCE.',
+      },
+      subtitle: {
+        line1: 'We work side by side with our partners: researching, ',
+        line2: 'prototyping and building solutions that deliver real impact.',
+      },
+      viewProject: 'VIEW PROJECT',
     },
   },
 };

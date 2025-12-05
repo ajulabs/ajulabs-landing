@@ -11,6 +11,24 @@ export const translations: Record<'pt' | 'en', Translations> = {
       },
       cta: 'Fale conosco',
     },
+    about: {
+      sectionTitle: 'CONHEÇA A AJULABS',
+      headline: {
+        line1: 'CADA NÚMERO CONTA UMA',
+        line2: 'HISTÓRIA DE IMPACTO.',
+      },
+      subtitle: {
+        line1: 'Por trás de cada entrega, há uma cultura que combina ',
+        line2: 'conhecimento, propósito e inovação para gerar resultados reais.',
+      },
+      paragraphs: {
+        line1: 'TECNOLOGIA E',
+        line2: 'CONHECIMENTO',
+        line3: 'QUE IMPULSIONAM',
+        line4: 'O FUTURO.',
+
+      }
+    },
     services: {
       sectionTitle: 'SERVIÇOS',
       headline: {
@@ -86,6 +104,23 @@ export const translations: Record<'pt' | 'en', Translations> = {
         contact: 'Contact',
       },
       cta: 'Get in touch',
+    },
+    about: {
+      sectionTitle: 'GET TO KNOW AJULABS',
+      headline: {
+        line1: 'EVERY NUMBER TELLS A',
+        line2: 'STORY OF IMPACT.',
+      },
+      subtitle: {
+        line1: 'Behind every delivery, there is a culture that combines ',
+        line2: 'knowledge, purpose, and innovation to generate real results.',
+      },
+      paragraphs: {
+        line1: 'TECHNOLOGY AND',
+        line2: 'KNOWLEDGE',
+        line3: 'THAT DRIVE',
+        line4: 'THE FUTURE.',
+      } 
     },
     services: {
       sectionTitle: 'SERVICES',

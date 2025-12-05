@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback } from 'react';
 import { gsap } from 'gsap';
-import { CAROUSEL_CONFIG } from '../models/cases.types';
+import { CAROUSEL_CONFIG } from '../../../models/cases.types';
 
 export function useGradientText(text: { line1: string; line2: string }) {
   const containerRef = useRef<HTMLHeadingElement>(null);

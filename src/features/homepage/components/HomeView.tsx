@@ -1,7 +1,7 @@
 'use client';
 
-import { ServicesView } from '@/features/solutions/components/SolutionsView';
-import { CasesView } from '@/features/cases/components/CasesView';
+import { ServicesView } from '@/features/homepage/components/solutions';
+import { CasesView } from '@/features/homepage/components/cases';
 
 export function HomeView() {
 

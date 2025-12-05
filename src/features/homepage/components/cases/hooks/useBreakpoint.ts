@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
-import type { Breakpoint } from '../models/cases.types';
+
+type Breakpoint = 'xs' | 'md' | 'lg' | 'xl';
 
 interface BreakpointState {
   breakpoint: Breakpoint;
@@ -7,7 +8,6 @@ interface BreakpointState {
   isMobile: boolean;
   isTablet: boolean;
   isDesktop: boolean;
-  isLargeDesktop: boolean;
   isLg: boolean;
   isXl: boolean;
 }
@@ -28,10 +28,7 @@ export function useBreakpoint(): BreakpointState {
       else if (width < 1280) bp = 'lg';
       else bp = 'xl';
 
-      setState((prev) => {
-        if (prev.breakpoint === bp && prev.width === width) return prev;
-        return { breakpoint: bp, width };
-      });
+      setState({ breakpoint: bp, width });
     };
 
     updateBreakpoint();
@@ -48,7 +45,6 @@ export function useBreakpoint(): BreakpointState {
       isLg: state.breakpoint === 'lg',
       isXl: state.breakpoint === 'xl',
       isDesktop: state.breakpoint === 'lg' || state.breakpoint === 'xl',
-      isLargeDesktop: state.width >= 1660,
     }),
     [state]
   );

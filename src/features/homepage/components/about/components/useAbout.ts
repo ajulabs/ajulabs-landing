@@ -1,7 +1,7 @@
 'use client';
 
 import { useHomeViewModel } from '@/features/homepage/viewModels/useHomeViewModel';
-import { useHeadlineEffect } from '@/lib/hooks/useHeadlineEffect';
+import { useHeadlineEffect } from '@/hooks/useHeadlineEffect';
 
 export function useAbout() {
     const { about } = useHomeViewModel();

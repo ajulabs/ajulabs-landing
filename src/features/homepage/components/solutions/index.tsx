@@ -3,8 +3,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { useServicesViewModel } from '../viewModels/useSolutionsViewModel';
-import arrowUpRightIcon from '../../../../public/arrow-up-right.svg';
+import { useServicesViewModel } from '../../viewModels/useSolutionsViewModel';
+import arrowUpRightIcon from '../../../../../public/arrow-up-right.svg';
 import Image from 'next/image';
 
 export function ServicesView() {

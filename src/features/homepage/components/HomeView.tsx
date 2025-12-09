@@ -1,8 +1,8 @@
 'use client';
 
-
-import { ServicesView } from '@/features/solutions/components/SolutionsView';
 import { AboutView } from '@/features/homepage/components/about/components';
+import { ServicesView } from '@/features/homepage/components/solutions';
+import { CasesView } from '@/features/homepage/components/cases';
 
 export function HomeView() {
 
@@ -10,6 +10,7 @@ export function HomeView() {
     <main className="flex min-h-screen flex-col">      
       <AboutView />
       <ServicesView />
+      <CasesView />
     </main>
   );
 }

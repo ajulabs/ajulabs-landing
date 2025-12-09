@@ -26,8 +26,19 @@ export const translations: Record<'pt' | 'en', Translations> = {
         line2: 'CONHECIMENTO',
         line3: 'QUE IMPULSIONAM',
         line4: 'O FUTURO.',
-
-      }
+      },
+      cards: [
+        {
+          title: '+ 08 anos',
+          description: 'Crescendo com quem acredita na tecnologia como força de transformação.',
+        },{
+          title: '+ 61 cases',
+          description: 'Soluções que conectam desafios complexos a resultados tangíveis.',
+        },{
+          title: '008k códigos',
+          description: 'Cada uma escrita com propósito: gerar impacto humano através da tecnologia.',
+        }
+      ]
     },
     services: {
       sectionTitle: 'SERVIÇOS',
@@ -120,7 +131,19 @@ export const translations: Record<'pt' | 'en', Translations> = {
         line2: 'KNOWLEDGE',
         line3: 'THAT DRIVE',
         line4: 'THE FUTURE.',
-      } 
+      },
+      cards: [
+        {
+          title: '+ 08 years',
+          description: 'Growing with those who believe in technology as a force for transformation.',
+        },{
+          title: '+ 61 cases',
+          description: 'Solutions that connect complex challenges to tangible results.',
+        },{
+          title: '008k lines of code',
+          description: 'Each written with purpose: generating human impact through technology.',
+        }
+      ]
     },
     services: {
       sectionTitle: 'SERVICES',

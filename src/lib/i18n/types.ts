@@ -26,6 +26,10 @@ export interface Translations {
       line3: string;
       line4: string;
     }
+    cards: {
+      title: string;
+      description: string;
+    }[]
   };
   services: {
     sectionTitle: string;

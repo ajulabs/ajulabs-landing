@@ -11,6 +11,7 @@ export function useHomeViewModel() {
     headline: t.about.headline,
     subtitle: t.about.subtitle,
     paragraphs: t.about.paragraphs,
+    cards: t.about.cards,
   }), [t]);
 
   return {

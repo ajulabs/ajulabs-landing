@@ -49,26 +49,50 @@ export const Hero = () => {
             {subtitle}
           </p>
 
-          <div className="hero-animate w-full flex justify-center">
-            <Button
+          <div className="hero-animate w-full flex justify-center opacity-0 mt-8">
+            <div
               onClick={onCtaClick}
               className="
-                relative group overflow-hidden
-                h-auto py-3 px-6 text-base md:py-4 md:px-10 md:text-lg
-                max-w-full rounded-full font-bold text-white
-                bg-gradient-to-r from-orange-500 via-orange-500 to-amber-500
-                border-0 ring-0 outline-none
-                transition-all duration-300 ease-out
-                hover:scale-105 hover:brightness-110
-                shadow-[0_0_50px_-10px_rgba(249,115,22,0.8)]
+                group relative cursor-pointer
+                w-full max-w-[350px] h-[54px]
+                rounded-full p-[2px]
+                transition-transform duration-300 ease-out hover:scale-105
               "
+              style={{
+                background: 'linear-gradient(273.74deg, #FFFFFF 11.82%, #FFE100 93.41%)',
+
+                boxShadow: `
+                  0px 0px 15px 0px rgba(242, 118, 15, 0.6),
+                  0px 0px 30px 5px rgba(242, 118, 15, 0.4),
+                  0px 0px 60px 10px rgba(242, 118, 15, 0.2),
+                  inset 0px 0px 8px 0px rgba(242, 118, 15, 0.5)
+                `
+              }}
             >
-              <span className="relative z-10 whitespace-normal text-center">{ctaText}</span>
-            </Button>
+              <Button
+                className="
+                  w-full h-full rounded-full flex items-center justify-center
+                  border-0 ring-0 outline-none relative overflow-hidden
+                "
+                style={{
+                  background: 'linear-gradient(180deg, rgba(255, 134, 47, 1) 0%, rgba(255, 107, 0, 1) 100%)',
+
+                  boxShadow: `
+                    inset 0px 1px 4px 0px rgba(255, 255, 255, 0.6),
+                    inset 0px 0px 10px 0px rgba(255, 255, 255, 0.2)
+                  `
+                }}
+              >
+                <span className="relative z-10 font-chillax font-normal text-base text-white tracking-wide cursor-pointer mt-[1px]">
+                {ctaText}
+                </span>
+
+                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-      
       <HeroCurve />
     </section>
   );

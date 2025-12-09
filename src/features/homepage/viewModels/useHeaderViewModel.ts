@@ -1,14 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useI18n } from '@/lib/i18n/context';
-import type { Locale } from '../models/header.schema';
+import { NAVIGATION_ITEMS_DATA, type Header } from '../models/header.types';
 
 export function useHeaderViewModel() {
   const { locale, setLocale, t } = useI18n();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleLocaleChange = (newLocale: Locale) => {
+  const handleLocaleChange = (newLocale: Header['locale']) => {
     setLocale(newLocale);
   };
 
@@ -20,12 +20,14 @@ export function useHeaderViewModel() {
     setIsMobileMenuOpen(false);
   };
 
-  const navigationItems = [
-    { key: 'about', label: t.header.nav.about, href: '#about' },
-    { key: 'solutions', label: t.header.nav.solutions, href: '#solutions' },
-    { key: 'projects', label: t.header.nav.projects, href: '#projects' },
-    { key: 'contact', label: t.header.nav.contact, href: '#contact' },
-  ];
+  const navigationItems = useMemo(
+    () =>
+      NAVIGATION_ITEMS_DATA.map((item) => ({
+        ...item,
+        label: t.header.nav[item.key as keyof typeof t.header.nav],
+      })),
+    [t]
+  );
 
   return {
     locale,

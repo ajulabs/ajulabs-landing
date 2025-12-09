@@ -76,5 +76,17 @@ export interface Translations {
       };
     };
   };
+  cases: {
+    sectionTitle: string;
+    headline: {
+      line1: string;
+      line2: string;
+    };
+    subtitle: {
+      line1: string;
+      line2: string;
+    };
+    viewProject: string;
+  };
 }
 

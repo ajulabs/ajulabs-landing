@@ -1,9 +1,9 @@
 "use client";
 
-import { useHeaderViewModel } from "../viewModels/useHeaderViewModel";
+import { useHeaderViewModel } from "../../viewModels/useHeaderViewModel";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import logo from "../../../../public/logo.png";
+import logo from "../../../../../public/logo.png";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";

@@ -47,8 +47,8 @@ export function useGSAPCarousel({
     const distance = Math.abs(index - activeIndex);
     
     if (distance === 0) return 1;
-    if (distance === 1) return 0.5;
-    return 0.3;
+    if (distance === 1) return 0.15;
+    return 0.10;
   }, []);
 
   const animateSlides = useCallback((activeIndex: number, duration = CAROUSEL_CONFIG.transitionDuration) => {

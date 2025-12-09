@@ -35,7 +35,7 @@ export const CASES_DATA: Case[] = [
 ];
 
 export const CAROUSEL_CONFIG = {
-  autoplayDelay: 3000,
+  autoplayDelay: 4000,
   transitionDuration: 0.6,
   dragThreshold: 50,
   gradientThreshold: 80,

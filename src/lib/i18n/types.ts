@@ -17,6 +17,23 @@ export interface Translations {
       cta: string;
     };
   },
+  about: {
+    sectionTitle: string;
+    headline: {
+      line1: string;
+      line2: string;
+    };
+    subtitle: {
+      line1: string;
+      line2: string;
+    };
+    paragraphs: {
+      line1: string;
+      line2: string;
+      line3: string;
+      line4: string;
+    }
+  };
   services: {
     sectionTitle: string;
     headline: {
@@ -61,6 +78,18 @@ export interface Translations {
         features: string[];
       };
     };
+  };
+  cases: {
+    sectionTitle: string;
+    headline: {
+      line1: string;
+      line2: string;
+    };
+    subtitle: {
+      line1: string;
+      line2: string;
+    };
+    viewProject: string;
   };
 }
 

@@ -18,6 +18,23 @@ export const translations: Record<'pt' | 'en', Translations> = {
         subtitle: 'Na AjuLabs, transformamos ideias em soluções digitais que conectam inovação, design e performance. Mais do que desenvolver tecnologia, criamos parcerias que impulsionam negócios e conectam pessoas ao futuro.',
         cta: 'Comece um projeto com a gente',
       },
+    about: {
+      sectionTitle: 'CONHEÇA A AJULABS',
+      headline: {
+        line1: 'CADA NÚMERO CONTA UMA',
+        line2: 'HISTÓRIA DE IMPACTO.',
+      },
+      subtitle: {
+        line1: 'Por trás de cada entrega, há uma cultura que combina ',
+        line2: 'conhecimento, propósito e inovação para gerar resultados reais.',
+      },
+      paragraphs: {
+        line1: 'TECNOLOGIA E',
+        line2: 'CONHECIMENTO',
+        line3: 'QUE IMPULSIONAM',
+        line4: 'O FUTURO.',
+
+      }
     },
     services: {
       sectionTitle: 'SERVIÇOS',
@@ -84,6 +101,18 @@ export const translations: Record<'pt' | 'en', Translations> = {
         },
       },
     },
+    cases: {
+      sectionTitle: 'CASES AJULABS',
+      headline: {
+        line1: 'PROJETOS QUE NASCERAM DA',
+        line2: 'CONFIANÇA E VIRARAM REFERÊNCIA.',
+      },
+      subtitle: {
+        line1: 'Trabalhamos lado a lado com nossos parceiros: pesquisando, ',
+        line2: 'prototipando e construindo soluções que entregam impacto real.',
+      },
+      viewProject: 'VISUALIZAR PROJETO',
+    },
   },
   en: {
     header: {
@@ -101,6 +130,22 @@ export const translations: Record<'pt' | 'en', Translations> = {
         subtitle: 'At AjuLabs, we transform ideas into digital solutions that connect innovation, design and performance. More than just developing technology, we create partnerships that propel businesses and connect people to the future.',
         cta: 'Start a project with us',
       },
+    about: {
+      sectionTitle: 'GET TO KNOW AJULABS',
+      headline: {
+        line1: 'EVERY NUMBER TELLS A',
+        line2: 'STORY OF IMPACT.',
+      },
+      subtitle: {
+        line1: 'Behind every delivery, there is a culture that combines ',
+        line2: 'knowledge, purpose, and innovation to generate real results.',
+      },
+      paragraphs: {
+        line1: 'TECHNOLOGY AND',
+        line2: 'KNOWLEDGE',
+        line3: 'THAT DRIVE',
+        line4: 'THE FUTURE.',
+      } 
     },
     services: {
       sectionTitle: 'SERVICES',
@@ -167,6 +212,18 @@ export const translations: Record<'pt' | 'en', Translations> = {
           ],
         },
       },
+    },
+    cases: {
+      sectionTitle: 'AJULABS CASES',
+      headline: {
+        line1: 'PROJECTS BORN FROM',
+        line2: 'TRUST AND BECAME A REFERENCE.',
+      },
+      subtitle: {
+        line1: 'We work side by side with our partners: researching, ',
+        line2: 'prototyping and building solutions that deliver real impact.',
+      },
+      viewProject: 'VIEW PROJECT',
     },
   },
 };

@@ -88,6 +88,15 @@ export const translations: Record<'pt' | 'en', Translations> = {
       },
       viewProject: 'VISUALIZAR PROJETO',
     },
+    contact: {
+      sectionTitle: 'DISPONÍVEL PARA NOVOS PROJETOS E PARA NOVAS HISTÓRIAS.',
+      headline: {
+        line1: 'AjuLabs pensa, cria e executa lado a',
+        line2: 'lado com você do insight à entrega.',
+      },
+      subtitle: 'Na AjuLabs, pensamos, criamos e executamos juntos. Podemos ser o seu time de inovação contínua ou o parceiro ideal para dar o próximo passo com velocidade e propósito.',
+      ctaButton: 'VAMOS CONVERSAR',
+    },
   },
   en: {
     header: {
@@ -176,6 +185,15 @@ export const translations: Record<'pt' | 'en', Translations> = {
         line2: 'prototyping and building solutions that deliver real impact.',
       },
       viewProject: 'VIEW PROJECT',
+    },
+    contact: {
+      sectionTitle: 'AVAILABLE FOR NEW PROJECTS AND NEW STORIES.',
+      headline: {
+        line1: 'AjuLabs thinks, creates and executes side',
+        line2: 'by side with you from insight to delivery.',
+      },
+      subtitle: 'At AjuLabs, we think, create and execute together. We can be your continuous innovation team or the ideal partner to take the next step with speed and purpose.',
+      ctaButton: "LET'S TALK",
     },
   },
 };

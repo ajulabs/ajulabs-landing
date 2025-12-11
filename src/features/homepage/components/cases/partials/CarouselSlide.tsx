@@ -27,7 +27,7 @@ export function CarouselSlide({
     <div
       ref={slideRef}
       onClick={onClick}
-      className="absolute top-0 left-1/2 -translate-x-1/2 select-none cases-font"
+      className="absolute z-20 top-0 left-1/2 -translate-x-1/2 select-none cases-font"
       style={{
         width: '95%',
         height: '100%',

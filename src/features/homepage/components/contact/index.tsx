@@ -57,7 +57,11 @@ export function ContactView() {
         >
           <button
             onClick={handleCtaClick}
-            className="group relative px-10 py-4 sm:px-14 sm:py-4 md:px-16 text-white font-regular text-xs sm:text-sm tracking-wider uppercase overflow-hidden transition-all duration-300 hover:scale-105 rounded-[36px] bg-[linear-gradient(180deg,#FF862F_5%,#FF862F_25%,#FF862F_75%,#FF6B00_100%)] shadow-[0_2px_14px_rgba(242,118,15,0.30),0_4px_16px_rgba(242,118,15,0.20),0_8px_18px_rgba(242,118,15,0.20),0_9px_20px_rgba(242,118,15,0.20),0_10px_22px_rgba(242,118,15,0.20),0_12px_38px_rgba(242,118,15,0.15),inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-5px_2px_rgba(0,0,0,0.16),inset_0_0_8px_rgba(255,255,255,0.4)] cursor-pointer"
+            className="group relative px-10 py-4 sm:px-14 sm:py-4 md:px-16 text-white font-regular text-xs sm:text-sm tracking-wider uppercase overflow-hidden transition-all duration-300 hover:scale-105 rounded-[36px] 
+            bg-[linear-gradient(180deg,#FF862F_5%,#FF862F_25%,#FF862F_75%,#FF6B00_100%)]
+            shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-5px_2px_rgba(0,0,0,0.16),inset_0_0_8px_rgba(255,255,255,0.4)]
+             
+            hover:shadow-[0_2px_14px_rgba(242,118,15,0.30),0_4px_16px_rgba(242,118,15,0.20),0_8px_18px_rgba(242,118,15,0.20),0_9px_20px_rgba(242,118,15,0.20),0_10px_22px_rgba(242,118,15,0.20),0_12px_38px_rgba(242,118,15,0.15),inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-5px_2px_rgba(0,0,0,0.16),inset_0_0_8px_rgba(255,255,255,0.4)] cursor-pointer"
           >
             <motion.span
               className="absolute inset-0 rounded-[36px] bg-linear-to-r from-transparent via-white/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -70,7 +74,7 @@ export function ContactView() {
               }}
             />
             
-            <span className="relative z-10 font-regular">{translations.ctaButton}</span>
+            <span className="relative z-10 font-medium">{translations.ctaButton}</span>
           </button>
         </motion.div>
       </div>

@@ -41,11 +41,11 @@ export const Hero = () => {
       <div className="relative z-10 w-full max-w-[1440px] px-4 flex flex-col items-center">
         <div className="w-full max-w-4xl flex flex-col items-center text-center">
           
-          <h1 className="hero-animate text-5xl md:text-7xl lg:text-[80px] font-medium tracking-tight leading-[1.1] mb-8 text-white">
+          <h1 className="hero-animate mb-8 text-white text-center font-medium text-4xl md:text-6xl lg:text-[80px] leading-[1.01] tracking-[-0.09em]">
             {title}
           </h1>
 
-          <p className="hero-animate text-gray-400 text-base md:text-lg max-w-2xl mb-12 leading-relaxed font-light">
+          <p className="hero-animate text-white text-base font-normal text-[14.6px] leading-[24px] tracking-[-0.08px] text-center max-w-2xl mb-12">
             {subtitle}
           </p>
 
@@ -54,7 +54,8 @@ export const Hero = () => {
               onClick={onCtaClick}
               className="
                 group relative cursor-pointer
-                w-full max-w-[350px] h-[54px]
+                w-full w-[90%] max-w-[350px]
+                h-auto min-h-[54px]
                 rounded-full p-[2px]
                 transition-transform duration-300 ease-out hover:scale-105
               "

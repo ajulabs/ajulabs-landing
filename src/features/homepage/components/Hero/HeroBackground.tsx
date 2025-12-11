@@ -5,7 +5,7 @@ import LetterGlitch from './LetterGlitch';
 
 export const HeroBackground = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const brandColors = ['#F2760F', '#39FF89', '#17258E'];
+  const brandColors = ['#F2760F', '#229952', '#17258E'];
 
   useEffect(() => {
     const container = containerRef.current;
@@ -38,6 +38,7 @@ export const HeroBackground = () => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchmove', handleTouchMove);
+
     };
   }, []);
 

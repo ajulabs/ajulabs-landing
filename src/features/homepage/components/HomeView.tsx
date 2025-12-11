@@ -1,6 +1,6 @@
 'use client';
 
-import { Hero } from './Hero/Hero';
+import { Hero } from '@/features/homepage/components/Hero/Hero';
 import { ServicesView } from '@/features/solutions/components/SolutionsView';
 
 export function HomeView() {

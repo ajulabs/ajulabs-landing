@@ -10,6 +10,11 @@ export interface Translations {
     };
     cta: string;
   };
+  hero: {
+    title: string;
+    subtitle: string;
+    cta: string;
+  };
   about: {
     sectionTitle: string;
     headline: {

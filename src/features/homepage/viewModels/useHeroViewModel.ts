@@ -13,9 +13,9 @@ export const useHeroViewModel = () => {
   };
 
   return {
-    title: t.homepage.hero.title,
-    subtitle: t.homepage.hero.subtitle,
-    ctaText: t.homepage.hero.cta,
+    title: t.hero.title,
+    subtitle: t.hero.subtitle,
+    ctaText: t.hero.cta,
     onCtaClick: handleCtaClick,
     locale,
   };

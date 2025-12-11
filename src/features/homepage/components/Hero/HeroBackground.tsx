@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import LetterGlitch from './LetterGlitch';
+import LetterGlitch from '@/features/homepage/components/hero/LetterGlitch';
 
 export const HeroBackground = () => {
   const containerRef = useRef<HTMLDivElement>(null);

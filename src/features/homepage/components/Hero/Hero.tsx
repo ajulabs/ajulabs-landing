@@ -3,8 +3,8 @@
 import { useRef } from 'react';
 import { useHeroViewModel } from '../../viewModels/useHeroViewModel';
 import { Button } from '@/components/ui/button';
-import { HeroBackground } from './HeroBackground';
-import { HeroCurve} from './HeroCurve';
+import { HeroBackground } from '@/features/homepage/components/hero/HeroBackground';
+import { HeroCurve} from '@/features/homepage/components/hero/HeroCurve';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 

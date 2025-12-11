@@ -33,7 +33,7 @@ export const Hero = () => {
   return (
     <section 
       ref={containerRef}
-      className="hero-font relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#050505] pb-20"
+      className="hero-font relative w-full min-h-[90vh] flex flex-col items-center justify-center overflow-hidden bg-[#050505] pb-0"
     >
       
       <HeroBackground />
@@ -54,41 +54,27 @@ export const Hero = () => {
               onClick={onCtaClick}
               className="
                 group relative cursor-pointer
-                w-full w-[90%] max-w-[350px]
+                w-[90%] max-w-[350px]
                 h-auto min-h-[54px]
                 rounded-full p-[2px]
                 transition-transform duration-300 ease-out hover:scale-105
+                bg-[linear-gradient(273.74deg,#FFFFFF_11.82%,#FFE100_100%)]
+                hover:shadow-[0px_0px_15px_0px_rgba(242,118,15,0.3),0px_0px_30px_5px_rgba(242,118,15,0.4),0px_0px_60px_10px_rgba(242,118,15,0.2),inset_0px_0px_8px_0px_rgba(242,118,15,0.5)]
               "
-              style={{
-                background: 'linear-gradient(273.74deg, #FFFFFF 11.82%, #FFE100 93.41%)',
-
-                boxShadow: `
-                  0px 0px 15px 0px rgba(242, 118, 15, 0.6),
-                  0px 0px 30px 5px rgba(242, 118, 15, 0.4),
-                  0px 0px 60px 10px rgba(242, 118, 15, 0.2),
-                  inset 0px 0px 8px 0px rgba(242, 118, 15, 0.5)
-                `
-              }}
             >
               <Button
                 className="
                   w-full h-full rounded-full flex items-center justify-center
                   border-0 ring-0 outline-none relative overflow-hidden
+                  bg-[linear-gradient(240deg,rgba(255,134,47,1)_25%,rgba(255,107,0,1)_100%)]
+                  shadow-[inset_0px_1px_4px_0px_rgba(255,255,255,0.3),inset_0px_0px_10px_0px_rgba(255,255,255,0.1)]
                 "
-                style={{
-                  background: 'linear-gradient(180deg, rgba(255, 134, 47, 1) 0%, rgba(255, 107, 0, 1) 100%)',
-
-                  boxShadow: `
-                    inset 0px 1px 4px 0px rgba(255, 255, 255, 0.6),
-                    inset 0px 0px 10px 0px rgba(255, 255, 255, 0.2)
-                  `
-                }}
               >
-                <span className="relative z-10 font-chillax font-normal text-base text-white tracking-wide cursor-pointer mt-[1px]">
-                {ctaText}
+                <span className="relative z-10 font-chillax font-regular text-sm min-[375px]:text-base text-white tracking-wide cursor-pointer mt-1px whitespace-nowrap">
+                  {ctaText}
                 </span>
 
-                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
               </Button>
             </div>
           </div>

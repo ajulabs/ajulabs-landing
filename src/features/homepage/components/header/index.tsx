@@ -77,7 +77,7 @@ export function Header() {
 
             <Button
               variant="default"
-              className="bg-[#F2760F] hover:bg-[#ffffff] hover:text-[#000000] text-white rounded-[12px] px-6 py-2 text-sm font-light cursor-pointer"
+              className="bg-[#F2760F] hover:bg-[#ffffff] hover:text-[#000000] text-white rounded-[12px] px-6 py-2 text-sm font-regular cursor-pointer"
             >
               {ctaText}
             </Button>
@@ -178,7 +178,7 @@ export function Header() {
                     <Button
                       variant="default"
                       onClick={closeMobileMenu}
-                      className="w-full bg-[#F2760F] hover:bg-[#ffffff] hover:text-[#000000] rounded-[12px] px-4 py-2 text-sm font-light cursor-pointer"
+                      className="w-full bg-[#F2760F] hover:bg-[#ffffff] hover:text-[#000000] rounded-[12px] px-4 py-2 text-sm font-regular cursor-pointer"
                     >
                       {ctaText}
                     </Button>

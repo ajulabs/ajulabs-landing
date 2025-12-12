@@ -14,7 +14,7 @@ export function AboutView() {
 
     return (
         <section id="about" className="relative w-full bg-white py-12 md:py-14 lg:py-16 px-6 md:px-12 lg:px-24">
-            <div className="flex flex-col gap-6 lg:gap-8 max-w-[1600px] mx-auto">
+            <div className="flex flex-col gap-6 lg:gap-8 max-w-screen-xl mx-auto">
                 <div>
                     <div className="flex items-center gap-3 pt-2 mb-6 lg:mb-0">
                         <div className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />

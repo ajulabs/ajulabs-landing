@@ -27,7 +27,9 @@ export interface Translations {
       line4: string;
     }
     cards: {
-      title: string;
+      value: number;
+      prefix: string;
+      suffix: string;
       description: string;
     }[]
   };

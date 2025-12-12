@@ -29,13 +29,19 @@ export const translations: Record<'pt' | 'en', Translations> = {
       },
       cards: [
         {
-          title: '+ 08 anos',
+          value: 8,
+          prefix: '+',
+          suffix: 'anos',
           description: 'Crescendo com quem acredita na tecnologia como força de transformação.',
         },{
-          title: '+ 61 cases',
+          value: 61,
+          prefix: '+',
+          suffix: 'casos',
           description: 'Soluções que conectam desafios complexos a resultados tangíveis.',
         },{
-          title: '008k códigos',
+          value: 8000,
+          prefix: '',
+          suffix: 'linhas de códigos',
           description: 'Cada uma escrita com propósito: gerar impacto humano através da tecnologia.',
         }
       ]
@@ -146,13 +152,19 @@ export const translations: Record<'pt' | 'en', Translations> = {
       },
       cards: [
         {
-          title: '+ 08 years',
+          value: 8,
+          prefix: '+',
+          suffix: 'years',
           description: 'Growing with those who believe in technology as a force for transformation.',
         },{
-          title: '+ 61 cases',
+          value: 61,
+          prefix: '+',
+          suffix: 'cases',
           description: 'Solutions that connect complex challenges to tangible results.',
         },{
-          title: '008k lines of code',
+          value: 8000,
+          prefix: '',
+          suffix: 'lines of code',
           description: 'Each written with purpose: generating human impact through technology.',
         }
       ]

@@ -5,6 +5,7 @@ import { AboutView } from '@/features/homepage/components/about/components';
 import { ServicesView } from '@/features/homepage/components/solutions';
 import { CasesView } from '@/features/homepage/components/cases';
 import { ContactView } from '@/features/homepage/components/contact';
+import { Footer } from '@/features/homepage/components/footer/Footer';
 
 export function HomeView() {
   return (
@@ -14,6 +15,7 @@ export function HomeView() {
       <ServicesView />
       <CasesView />
       <ContactView />
+      <Footer />
     </main>
   );
 }

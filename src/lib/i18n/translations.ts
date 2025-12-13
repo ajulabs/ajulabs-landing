@@ -120,6 +120,14 @@ export const translations: Record<'pt' | 'en', Translations> = {
       subtitle: 'Na AjuLabs, pensamos, criamos e executamos juntos. Podemos ser o seu time de inovação contínua ou o parceiro ideal para dar o próximo passo com velocidade e propósito.',
       ctaButton: 'VAMOS CONVERSAR',
     },
+    footer: {
+      commercial: 'COMERCIAL',
+      emailLabel: 'E-mail',
+      whatsappLabel: 'Whatsapp',
+      rights: '© 2025',
+      legal: 'INFORMAÇÕES LEGAIS',
+      madeBy: 'FEITO COM PROPÓSITO, TECNOLOGIA E CAFÉ.',
+    },
   },
   en: {
     header: {
@@ -239,6 +247,14 @@ export const translations: Record<'pt' | 'en', Translations> = {
       },
       subtitle: 'At AjuLabs, we think, create and execute together. We can be your continuous innovation team or the ideal partner to take the next step with speed and purpose.',
       ctaButton: "LET'S TALK",
+    },
+    footer: {
+      commercial: 'COMMERCIAL',
+      emailLabel: 'E-mail',
+      whatsappLabel: 'Whatsapp',
+      rights: '© 2025',
+      legal: 'LEGAL INFORMATION',
+      madeBy: 'MADE WITH PURPOSE, TECHNOLOGY AND COFFEE.',
     },
   },
 };

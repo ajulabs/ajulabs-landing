@@ -31,6 +31,12 @@ export interface Translations {
       line3: string;
       line4: string;
     }
+    cards: {
+      value: number;
+      prefix: string;
+      suffix: string;
+      description: string;
+    }[]
   };
   services: {
     sectionTitle: string;

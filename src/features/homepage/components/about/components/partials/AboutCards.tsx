@@ -6,7 +6,7 @@ export function AboutCards() {
     const { about } = useHomeViewModel();
 
     return (
-        <div className='relative flex flex-col md:grid md:grid-cols-2 xl:flex xl:flex-row gap-6 w-full xl:w-auto xl:max-w-[1300px] xl:[&:has(.last-card:hover)>*:not(.last-card)]:-translate-x-[30px] xl:[&:has(.second-card:hover)>.first-card]:-translate-x-[20px]'>
+        <div className='relative flex flex-col md:grid md:grid-cols-2 xl:flex xl:flex-row gap-6 w-full xl:w-auto xl:max-w-[1300px] xl:[&:has(.last-card:hover)>*:not(.last-card)]:-translate-x-[40px] 2xl:[&:has(.second-card:hover)>.first-card]:-translate-x-[20px] '>
                 {about.cards.map((card, index) => {
                     const isLast = index === about.cards.length - 1;
             
@@ -14,7 +14,7 @@ export function AboutCards() {
                         <div
                             key={index}
                             className={`
-                                group relative flex flex-col overflow-hidden
+                                group relative flex flex-col 
                                 bg-white p-6 md:p-8
                                 border border-gray-100 rounded-4xl shadow-lg
                                 min-h-[240px] md:min-h-[260px]
@@ -34,7 +34,7 @@ export function AboutCards() {
                                 2xl:duration-1000
                                 2xl:ease-[cubic-bezier(0.16,1,0.3,1)]
 
-                                2xl:hover:-translate-x-[20px]
+                                2xl:hover:-translate-x-[0px]
                                 2xl:hover:min-w-[420px]
 
                                 2xl:before:content-['']
@@ -44,17 +44,26 @@ export function AboutCards() {
                                 2xl:before:rounded-4xl
                                 2xl:before:z-[-1]
 
-                                2xl:before:translate-x-[56px]
+                                2xl:before:translate-x-[356px]
                                 2xl:before:transition-all
                                 2xl:before:duration-1000
                                 2xl:before:ease-[cubic-bezier(0.16,1,0.3,1)]
 
                                 2xl:hover:before:translate-x-0
+
+                                2xl:after:content-['']
+                                2xl:after:absolute
+                                2xl:after:top-0
+                                2xl:after:right-[-60px]
+                                2xl:after:w-[60px]
+                                2xl:after:h-full
+                                2xl:after:pointer-events-auto
+                                2xl:after:bg-transparent
                             ` : ''}
 
                                 ${isLast
-                                    ? 'last-card relative overflow-hidden xl:z-50 md:col-span-2 xl:col-span-1 xl:w-[500px] xl:origin-right xl:hover:scale-x-[1.10]'
-                                    : ''
+                                    ? 'last-card relative overflow-hidden xl:z-50 md:col-span-2 xl:col-span-1 xl:w-[430px] xl:origin-right xl:hover:scale-x-[1.10]'
+                                    : 'xl:w-[320px]'
                                 }
                             `}
                         >

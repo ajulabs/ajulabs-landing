@@ -98,5 +98,13 @@ export interface Translations {
     subtitle: string;
     ctaButton: string;
   };
+  footer: {
+    commercial: string;
+    emailLabel: string;
+    whatsappLabel: string;
+    rights: string;
+    legal: string;
+    madeBy: string;
+  };
 }
 
